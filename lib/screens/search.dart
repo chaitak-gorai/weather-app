@@ -19,7 +19,7 @@ class _SearchState extends State<Search> {
 
   Future getWeatherOfCity() async {
     http.Response response = await http.get(
-        'https://api.openweathermap.org/data/2.5/weather?q=$city&appid=[Your Api Key]&units=metric');
+        'https://api.openweathermap.org/data/2.5/weather?q=$city&appid=57e69b1703e7dd474c8b70fe4511d06a&units=metric');
     if (response.statusCode == 200) {
       data = jsonDecode(response.body);
       forecast = await getForecastOfCity();
@@ -32,7 +32,7 @@ class _SearchState extends State<Search> {
 
   Future getForecastOfCity() async {
     http.Response response = await http.get(
-        'https://api.openweathermap.org/data/2.5/forecast?q=$city&appid=[Your Api Key]&units=metric');
+        'https://api.openweathermap.org/data/2.5/forecast?q=$city&appid=57e69b1703e7dd474c8b70fe4511d06a&units=metric');
     if (response.statusCode == 200) {
       return (jsonDecode(response.body));
     } else {
@@ -145,20 +145,7 @@ class _SearchState extends State<Search> {
                       ],
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Developed with ',
-                          style: kFooterText ),
-                      Icon(
-                        Icons.favorite,
-                        color: Colors.redAccent,
-                        size: 25.0,
-                      ),
-                      Text('  by Vineet',
-                          style:kFooterText )
-                    ],
-                  )
+           
                 ],
               ),
             ),

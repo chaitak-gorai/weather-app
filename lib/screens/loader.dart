@@ -42,7 +42,7 @@ class _LoaderState extends State<Loader> {
 
   Future getWeather() async {
     http.Response response = await http.get(
-        'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=[Your Api Key]&units=metric');
+        'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=57e69b1703e7dd474c8b70fe4511d06a&units=metric');
     if (response.statusCode == 200) {
       data = jsonDecode(response.body);
       forecast= await getForecast();
@@ -54,7 +54,7 @@ class _LoaderState extends State<Loader> {
 
   Future getForecast() async {
     http.Response response = await http.get(
-        'https://api.openweathermap.org/data/2.5/forecast?lat=$latitude&lon=$longitude&appid=[Your Api Key]&units=metric');
+        'https://api.openweathermap.org/data/2.5/forecast?lat=$latitude&lon=$longitude&appid=57e69b1703e7dd474c8b70fe4511d06a&units=metric');
     if (response.statusCode == 200) {
       return(jsonDecode(response.body));
     } else {
